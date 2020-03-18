@@ -23,7 +23,7 @@ $(document).ready(
         
         if (code && msg)
         {
-            showNotificationBarWithFading(code, msg);
+            showNotificationBarWithFading(decodeURI(code), decodeURI(msg));
         }
     }
 )
