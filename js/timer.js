@@ -5,11 +5,12 @@
  */
 
 function timer() {
-    const Tstart = new Date("2019/01/19 16:26:11");
-    const MSPERSEC = 1000;
-    const SECPERMIN = 60;
-    const SECPERHR = 3600;
-    const SECPERDAY = 86400;
+    "use strict";
+    var Tstart = new Date("2019/01/19 16:26:11");
+    var MSPERSEC = 1000;
+    var SECPERMIN = 60;
+    var SECPERHR = 3600;
+    var SECPERDAY = 86400;
 
     var Tnow = new Date();
     var dSec = (Tnow.getTime() - Tstart.getTime()) / MSPERSEC;
@@ -27,4 +28,11 @@ function timer() {
     document.getElementById("clockspan").innerHTML = fstr;
     window.setTimeout("timer();", MSPERSEC);
 }
-window.onload = timer();
+
+$(document).ready(
+    function ()
+    {
+        "use strict";
+        timer();
+    }
+)
