@@ -17,7 +17,6 @@ function getQueryVariable(variable)
 $(document).ready(
     function ()
     {
-        "use strict";
         var code = getQueryVariable("code");
         var msg = getQueryVariable("msg");
         
