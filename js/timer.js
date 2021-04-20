@@ -4,33 +4,29 @@
  *		       2019/01/20
  */
 
-function timer() {
+function timer()
+{
     "use strict";
-    var Tstart = new Date("2019/01/19 16:26:11");
-    var MSPERSEC = 1000;
-    var SECPERMIN = 60;
-    var SECPERHR = 3600;
-    var SECPERDAY = 86400;
+    const start = new Date("2019/01/19 16:26:11");
+    const now = new Date();
+    let seconds = (now.getTime() - start.getTime()) / 1000;
+    let d, h, m, s, string;
 
-    var Tnow = new Date();
-    var dSec = (Tnow.getTime() - Tstart.getTime()) / MSPERSEC;
-    var d, h, m, s, fstr;
+    d = Math.floor(seconds / 86400);
+    seconds = seconds - d * 86400;
+    h = Math.floor(seconds / 3600);
+    seconds = seconds - h * 3600;
+    m = Math.floor(seconds / 60);
+    seconds = seconds - m * 60;
+    s = Math.floor(seconds);
 
-    d = Math.floor(dSec / SECPERDAY);
-    dSec = dSec - d * SECPERDAY;
-    h = Math.floor(dSec / SECPERHR);
-    dSec = dSec - h * SECPERHR;
-    m = Math.floor(dSec / SECPERMIN);
-    dSec = dSec - m * SECPERMIN;
-    s = Math.floor(dSec);
-
-    fstr = "网站已开设：" + d + " 天 " + h + " 时 " + m + " 分 " + s + " 秒";
-    document.getElementById("clockspan").innerHTML = fstr;
-    window.setTimeout("timer();", MSPERSEC);
+    string = "网站已开设：" + d + " 天 " + h + " 时 " + m + " 分 " + s + " 秒";
+    document.getElementById("clock-span").innerHTML = string;
+    window.setTimeout("timer();", 1000);
 }
 
 $(document).ready(
-    function ()
+    function()
     {
         "use strict";
         timer();

@@ -1,9 +1,9 @@
-.notification-bar {
-	font-family: Verdana, Geneva, sans-serif;
-    height: 53px;
-	text-align: center;
-    vertical-align: middle;
-    line-height: 53px;
-    vertical-align: middle;
-    display: none;
+.notification-bar
+{
+    display        : none;
+    font-family    : Verdana, Geneva, sans-serif;
+    height         : 53px;
+    line-height    : 53px;
+    text-align     : center;
+    vertical-align : middle;
 }
